@@ -8,6 +8,10 @@ namespace vsite::oop::v2
 /*
 * class member function implementations
 */
+	std::string to_hex(int number) {
+		return std::format("{:X}", number);
+	}
+	
 	double color::get_red() const {
 		return red;
 	}
@@ -27,20 +31,15 @@ namespace vsite::oop::v2
 	void color::set_blue(double c) {
 		blue = std::clamp(c, 0.0, 1.0);
 	}
-
+	
 	unsigned int color::get_color_ref() const {
 		return RGB(red * 255, green * 255, blue * 255);
 	}
-
+	
 	double color::get_luminance() const {
 		return red * 0.2126 + green * 0.7152 + blue * 0.0722;
 	}
-	std::string color::to_hex() const {
-		unsigned color = get_color_ref();
-		return std::format("#{:02X}{:02X}{:02X}",
-			(color & 0xFF),
-			(color >> 8) & 0xFF,
-			(color >> 16) & 0xFF);
-	}
-
+	
+		
+	
 } // namespace

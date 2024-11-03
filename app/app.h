@@ -10,6 +10,9 @@ namespace vsite::oop::v2
 	/*
 	* class declaration
 	*/
+
+	std::string to_hex(int number);
+
 	class color {
 	private:
 		double red{ 0.0 };
@@ -25,10 +28,10 @@ namespace vsite::oop::v2
 		void set_green(double b);
 		void set_blue(double c);
 
+		
 		unsigned get_color_ref() const;
 		double get_luminance() const;
 
-		std::string to_hex() const;
 	};
 	
 };

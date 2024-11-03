@@ -1,5 +1,7 @@
 #include <iostream>
 #include <format>
+#include <string>
+
 #include "app.h"
 
 int main()
@@ -14,7 +16,6 @@ int main()
 	c.set_green(g);
 	c.set_blue(b);
 
-	std::cout << "Boja u heksadecimalnom formatu: " << c.to_hex() << std::endl;
-
+	std::cout << "Vrijednost boje u hex zapisu 0x" << vsite::oop::v2::to_hex(c.get_color_ref());
 
 }
